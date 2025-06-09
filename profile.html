@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile - CODTECH</title>
+  <style>
+    /* Basic styling for the entire page */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* Heading style */
+    h1 {
+      color: #6a0dad;
+    }
+
+    /* Container for certificate section */
+    .certificate {
+      margin-top: 2rem;
+    }
+
+    /* Styling for the certificate preview box */
+    .certificate-preview {
+      width: 80%;
+      max-width: 600px;
+      border: 2px dashed #6a0dad;
+      padding: 1rem;
+      margin: auto;
+      background: #fff;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #6a0dad;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* Hover effect for button */
+    button:hover {
+      background-color: #520a9b;
+    }
+
+    /* Styling for the certificate image */
+    .certificate-img {
+      width: 100%;
+      max-width: 550px;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main heading -->
+  <h1>Welcome, Student</h1>
+  
+  <!-- Subheading text -->
+  <p>Track your progress and view your completion certificate.</p>
+
+  <!-- Certificate container -->
+  <div class="certificate">
+    
+    <!-- Button to toggle certificate visibility -->
+    <button onclick="showCertificate()">View Certificate</button>
+
+    <!-- Hidden certificate preview (initially hidden using inline style) -->
+    <div class="certificate-preview" id="cert" style="display:none;">
+      
+      <!-- Sample certificate image -->
+      <img src="https://www.gstatic.com/classroom/edu_certificates/certificate_sample_en.png" 
+           alt="Certificate Image" 
+           class="certificate-img">
+      
+      <!-- Certificate text content -->
+      <h2>Certificate of Completion</h2>
+      <p>This certifies that <strong>You</strong> have successfully completed your internship on <strong>31st July 2025</strong>.</p>
+      <p>— CODTECH</p>
+    </div>
+  </div>
+
+  <!-- JavaScript to toggle visibility of certificate -->
+  <script>
+    function showCertificate() {
+      const cert = document.getElementById('cert');
+      // Toggle display between block and none
+      cert.style.display = cert.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>

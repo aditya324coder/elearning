@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Course Details</title>
+
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    /* General body styling */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: #f0f2f5;
+    }
+
+    /* Container to center main content */
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    /* Back button styling */
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin: 1rem auto 0 auto;
+      cursor: pointer;
+      color: #6a0dad;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      border: 2px solid #6a0dad;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .back-btn:hover {
+      background-color: #6a0dad;
+      color: white;
+    }
+
+    /* Sticky header styling with background */
+    header {
+      background-color: #6a0dad;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-weight: 600;
+      font-size: 1.5rem;
+    }
+
+    /* Course thumbnail image smaller */
+    .course-thumbnail {
+      width: 300px; /* smaller width */
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+      margin: 1rem auto;
+      display: block;
+      box-shadow: 0 4px 10px rgba(106, 13, 173, 0.3);
+    }
+
+    /* Video styling */
+    video {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Button styling */
+    button {
+      padding: 10px 20px;
+      background-color: #6a0dad;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    /* Button hover effect */
+    button:hover {
+      background-color: #520a9b;
+    }
+
+    /* Progress bar styling */
+    progress {
+      width: 100%;
+      height: 20px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back button with icon -->
+  <a href="courses.html" class="back-btn" title="Go Back to Courses">
+    <i class="fas fa-arrow-left"></i> Back to Courses
+  </a>
+
+  <!-- Header with icon and title -->
+  <header>
+    <i class="fab fa-js-square"></i>
+    Course: JavaScript Essentials
+  </header>
+
+  <main>
+    <!-- Relevant course thumbnail image (smaller) -->
+    <img 
+      src="https://cdn-icons-png.flaticon.com/512/919/919828.png" 
+      alt="JavaScript Logo" 
+      class="course-thumbnail"
+      title="JavaScript Logo"
+    />
+
+    <!-- Video player with relevant JS tutorial -->
+    <video controls>
+      <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.webm" type="video/webm" />
+      <source src="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" type="video/mp4" />
+      Your browser does not support HTML video.
+    </video>
+
+    <!-- Progress bar showing completion progress -->
+    <progress id="progressBar" value="60" max="100" title="Course Progress"></progress>
+
+    <!-- Button to mark course as watched, includes icon -->
+    <button onclick="markWatched()">
+      <i class="fas fa-check-circle"></i> Mark as Watched
+    </button>
+  </main>
+
+  <script>
+    // Marks progress bar as complete and shows alert
+    function markWatched() {
+      const progress = document.getElementById("progressBar");
+      progress.value = 100;
+      alert("Marked as watched!");
+    }
+  </script>
+
+</body>
+</html>
